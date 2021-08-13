@@ -2,7 +2,7 @@ package cybersoft.javabackend.java12.gira.role.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import cybersoft.javabackend.java12.gira.role.dto.CreateGroupDto;
@@ -12,8 +12,11 @@ import cybersoft.javabackend.java12.gira.role.service.itf.GroupService;
 
 @Service
 public class GroupServiceImpl implements GroupService {
-	@Autowired
+	
 	private GroupRepository repository;
+	public GroupServiceImpl(GroupRepository groupService) {
+		repository=groupService;
+	}
 	@Override
 	public List<Group> findAll() {
 		

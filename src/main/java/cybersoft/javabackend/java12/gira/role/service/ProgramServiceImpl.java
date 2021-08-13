@@ -2,7 +2,6 @@ package cybersoft.javabackend.java12.gira.role.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cybersoft.javabackend.java12.gira.role.dto.CreateProgramDto;
@@ -12,8 +11,11 @@ import cybersoft.javabackend.java12.gira.role.service.itf.ProgramService;
 
 @Service
 public class ProgramServiceImpl implements ProgramService{
-	@Autowired
+	
 	private ProgramRepository repository;
+	public ProgramServiceImpl(ProgramRepository programRepository) {
+		repository= programRepository;
+	}
 	
 	@Override
 	public List<Program> findAll() {
